@@ -85,11 +85,11 @@ const questions = () => {
 
     // allEmployees.push(addedEmployee);
     console.log(allEmployees);
-    createTeam();
+    createTeamFile();
 }
 )}
 
-function createTeam() {
+function createTeamFile() {
     if (!fs.existsSync(OUTPUT_DIR)) {
       fs.mkdirSync(OUTPUT_DIR);
     }
