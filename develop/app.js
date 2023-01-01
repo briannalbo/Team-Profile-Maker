@@ -63,21 +63,27 @@ const questions = () => {
     ])
 
 .then((answers) => {
+    // if(answers.addEmployee) {
+    //     return questions();
+    // }
+    let addedEmployee;
+    if(answers.role === 'Manager') {
+        addedEmployee = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+        allEmployees.push(addedEmployee);
+    }
+    else if (answers.role === 'Engineer'){
+        addedEmployee = new Engineer(answers.name, answers.id, answers.email, answers.github)
+        allEmployees.push(addedEmployee);
+    }
+    else if(answers.role === 'Intern'){
+        addedEmployee = new Intern(answers.name, answers.id, answers.email, answers.school)
+        allEmployees.push(addedEmployee);
+    }
     if(answers.addEmployee) {
         return questions();
     }
-    let addedEmployee;
-    if(answers.role === 'Manager') {
-        addedEmployee = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-    }
-    else if (answers.role === 'Engineer'){
-        addedEmployee = new Engineer(answers.name, answers.id, answers.email, answers.github);
-    }
-    else if(answers.role === 'Intern'){
-        addedEmployee = new Intern(answers.name, answers.id, answers.email, answers.school);
-    }
 
-    allEmployees.push(addedEmployee);
+    // allEmployees.push(addedEmployee);
     console.log(allEmployees);
     createTeam();
 }
