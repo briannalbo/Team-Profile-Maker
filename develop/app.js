@@ -79,8 +79,18 @@ const questions = () => {
 
     allEmployees.push(addedEmployee);
     console.log(allEmployees);
+    createTeam();
 }
 )}
+
+function createTeam() {
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR);
+    }
+    fs.writeFileSync(outputPath, render(allEmployees));
+    console.log('file successfully written');
+  }
+
  questions();
 
 // Write code to use inquirer to gather information about the development team members,
