@@ -12,6 +12,8 @@ const render = require("./lib/htmlRenderer");
 const { listenerCount } = require("process");
 const { resolve } = require("path");
 
+const allEmployees = [];
+
 const questions = () => {
     return inquirer.prompt([
         {
@@ -64,10 +66,23 @@ const questions = () => {
     if(answers.addEmployee) {
         return questions();
     }
+    let addedEmployee;
+    if(answers.role === 'Manager') {
+        addedEmployee = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+    }
+    else if (answers.role === 'Engineer'){
+        addedEmployee = new Engineer(answers.name, answers.id, answers.email, answers.github);
+    }
+    else if(answers.role === 'Intern'){
+        addedEmployee = new Intern(answers.name, answers.id, answers.email, answers.school);
+    }
 
-})
+    allEmployees.push(addedEmployee);
+    console.log(allEmployees);
 }
+)}
  questions();
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
