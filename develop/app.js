@@ -41,8 +41,32 @@ const questions = () => {
             name: 'officeNumber',
             when: (answers) => answers.role === 'Manager',
         },
+        {
+            type: 'input',
+            message: "What is the employee's Github username?",
+            name: 'github',
+            when: (answers) => answers.role === 'Engineer'
+        },
+        {
+            type: 'input',
+            message: "What school is the intern affiliated with?",
+            name: 'school',
+            when: (answers) => answers.role === 'Intern'
+        },
+        {
+            type: 'confirm',
+            message: "Would you like to add another employee?",
+            name: 'addEmployee'
+        }
     ])
-};
+
+.then((answers) => {
+    if(answers.addEmployee) {
+        return questions();
+    }
+
+})
+}
  questions();
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
