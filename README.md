@@ -23,6 +23,8 @@
   ## Usage
   You can clone this repository then open the terminal on the app.js file then enter 'node app.js" to invoke the application.
   - A walk-through video of the application can be found: https://drive.google.com/file/d/1k_HUyGaGE8a8Bh8_6LtVSjCwX1-pSNrV/view
+  - The following screenshot demonstrates an example of the the application's use:
+  ![team-profile-ss.png](https://github.com/briannalbo/Team-Profile-Maker/blob/main/images/team-profile-ss.png)
 
   ## License
 This project is licensed under the Apache License 2.0.
@@ -40,4 +42,4 @@ This project is licensed under the Apache License 2.0.
 - https://github.com/briannalbo
 - brianna.albo@gmail.com
 
-![team-profile-ss.png](https://github.com/briannalbo/Team-Profile-Maker/blob/main/images/team-profile-ss.png)
+
